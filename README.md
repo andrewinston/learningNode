@@ -1,3 +1,3 @@
-Project reproducing tutorial stated at https://github.com/andrewinston/learningNode.git
+This is an API to store ratings for certain entities
 
-small restful api with Node.js
+When it's ready, all you need to do is login and start creating entities to be rated
