@@ -1,12 +1,12 @@
 var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000,
-  mongoose = require('mongoose')
+  //mongoose = require('mongoose')
   Item = require('./api/models/itemRatingModel'),
   bodyParser = require('body-parser');
 
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://awinston:w1ea2dq3s@ds227674/ratingengine');
+//mongoose.Promise = global.Promise;
+//mongoose.connect('mongodb://awinston:w1ea2dq3s@ds227674/ratingengine');
 
 const Datastore = require('@google-cloud/datastore');
 const datastore = new Datastore({});
