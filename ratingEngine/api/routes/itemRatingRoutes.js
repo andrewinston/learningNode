@@ -3,10 +3,10 @@ module.exports = function(app) {
 	var itemRating = require('../controllers/itemRatingController');
 
 	//itemRating routes
-	app.route('/items/:token')
+	app.route('/items/')
 		.get(itemRating.list_all_items)
 
-	app.route('/items/:itemId/vote/:grade/:voterId/:token')
+	app.route('/items/:itemId/vote/:grade/:voterId/')
 		.post(itemRating.vote_item)
 
 	/*app.route('/items/:itemId')
@@ -17,10 +17,10 @@ module.exports = function(app) {
 		.get(itemRating.get_votes)
 		*/
 
-	app.route('/items/:itemId/getRatings/:token')
+	app.route('/items/:itemId/getRatings/')
 		.get(itemRating.get_ratings)
 
-	app.route('/items/createItem/:token')
+	app.route('/items/createItem/')
 		.post(itemRating.create_item)
 
 };
