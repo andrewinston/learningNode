@@ -89,7 +89,7 @@ exports.vote_item = function(req, res){
 				res.status(500).json({status: "error", errors: errors});
 			}
 			else{
-				item.ratings.push({voterId: req.params.voterId, creation_time: new Date(), grade: parseInt(req.params.grade)});
+				item.ratings.push({voterId: req.params.voterId.toString(), creation_time: new Date(), grade: parseInt(req.params.grade)});
 			}
 
 			const entity = {
@@ -97,8 +97,9 @@ exports.vote_item = function(req, res){
 				data: item
 			};
 			datastore.upsert(entity).then(()=>{
-				res.status(200).jsothenn({status:"ok", entity:entity});
+				res.status(200).json({status:"ok", entity:entity});
 			}).catch(err =>{
+				console.log(err);
 				res.status(500).send({status:"error", errors: [err]})
 			});
 		}).catch(err =>{
